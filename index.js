@@ -5,7 +5,6 @@ const server = express();
 server.use(express.json());
 
 const projects = [];
-let countRequests = 0;
 
 function projectExists(req, res, next){
     if (projects.findIndex((project) => project.id == req.params.id) < 0){
@@ -16,7 +15,7 @@ function projectExists(req, res, next){
 }
 
 function printCountRequest(req, res, next){
-    console.log(`Request: ${++countRequests}`);
+    console.count(`Count request`);
     return next();
 }
 
